@@ -1,0 +1,121 @@
+/* Configuración básica y reseteo de márgenes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del cuerpo con fondo rosa pedido y centrado */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FF9FEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Diseño de la tarjeta, bordes redondeados y sombra con transición */
+.tarjeta {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta: se eleva */
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor que oculta el exceso de la imagen al hacer zoom */
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cámbialo aquí */
+    transition: transform 0.5s ease;
+}
+
+/* Imagen con transición suave */
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Con esto la imagen se acomodará completa dentro del espacio */
+    transition: transform 0.5s ease;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta: la imagen se amplía */
+.tarjeta:hover .contenedor-imagen img {
+    transform: scale(1.1);
+}
+
+/* Estilos de categoría, títulos y textos */
+.categoria {
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 5px 0;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Precio con animación de aparición */
+.precio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    margin-bottom: 15px;
+    animation: aparecer 2s ease;
+}
+
+/* Estilos del botón de compra */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff65b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color del botón al pasar el cursor */
+button:hover {
+    background-color: #e04b9b;
+}
+
+/* Animación keyframes para que el precio aparezca suavemente */
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adaptabilidad (Media Query) para celulares pequeños */
+@media (max-width: 400px) {
+    .tarjeta {
+        width: 90%;
+    }
+}
