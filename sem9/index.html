@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pedidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Registro de Pedidos</h1>
+        
+        <form id="formPedido">
+            <label>Nombre completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label>Teléfono:</label>
+            <input type="tel" id="telefono" required>
+
+            <label>Producto:</label>
+            <input type="text" id="producto" required>
+
+            <label>Precio unitario ($):</label>
+            <input type="number" id="precio" step="0.01" min="0.01" required>
+
+            <label>Cantidad:</label>
+            <input type="number" id="cantidad" min="1" required>
+
+            <label>Método de pago:</label>
+            <select id="pago" required>
+                <option value="">Selecciona...</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
+
+            <button type="submit">Registrar pedido</button>
+            <button type="reset" id="btnLimpiar">Limpiar formulario</button>
+        </form>
+
+        <div id="resultado" class="oculto">
+            <h2>Resumen del Pedido</h2>
+            <p><strong>Cliente:</strong> <span id="resNombre"></span></p>
+            <p><strong>Correo:</strong> <span id="resCorreo"></span></p>
+            <p><strong>Teléfono:</strong> <span id="resTelefono"></span></p>
+            <p><strong>Producto:</strong> <span id="resProducto"></span></p>
+            <p><strong>Cantidad:</strong> <span id="resCantidad"></span></p>
+            <p><strong>Método de pago:</strong> <span id="resPago"></span></p>
+            <hr>
+            <p><strong>Subtotal:</strong> $<span id="resSubtotal"></span></p>
+            <p><strong>IVA (16%):</strong> $<span id="resIva"></span></p>
+            <p><strong>Total a pagar:</strong> $<span id="resTotal"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
