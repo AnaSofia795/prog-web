@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Informativa Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <main class="contenedor-principal">
+        <div class="tarjeta" id="miTarjeta">
+            <h2>Cafetería Kafka</h2>
+            <p id="textoPrincipal">Disfruta de un espacio acogedor con el mejor café artesanal y postres recién horneados.</p>
+            
+            <!-- Zona complementaria (inicialmente oculta) -->
+            <div class="info-adicional oculto" id="bloqueAdicional">
+                <p>📍 Ubicación: Av. Central #123<br>⏰ Horario: Lunes a Sábado de 8:00 AM a 9:00 PM</p>
+            </div>
+
+            <div class="contenedor-botones">
+                <button id="btnCambiarTexto">Cambiar Texto</button>
+                <button id="btnToggleInfo">Ver Más Info</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
